@@ -1,0 +1,46 @@
+name: Rust CI/CD Pipeline
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions-rs/toolchain@v1
+      with:
+          toolchain: stable
+          profile: minimal
+          components: clippy, rustfmt
+          override: true
+
+    - name: Install python packages and update Rust
+      run: make install
+
+    - name: Check Rust versions
+      run: make rust-version
+
+    - name: Format
+      run: make format
+
+    - name: Lint
+      run: make lint
+
+    - name: Test
+      run: make test
+
+    - name: Build the release version
+      run: make release
+
+    - name: Run the program
+      run: make run
+
+    - name: Upload The Binary Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-binary
+        path: target/release/rust_proj

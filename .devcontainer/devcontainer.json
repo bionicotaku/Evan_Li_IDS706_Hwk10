@@ -1,0 +1,16 @@
+{
+    "name": "Rust and Python",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer", // Updated to use rust-analyzer
+                "ms-azuretools.vscode-docker", // Added Docker extension
+                "ms-python.python" // Added Python extension
+            ]
+        }
+    },
+    "postCreateCommand": "rustup update && rustup component add clippy && rustup component add rustfmt"
+}
