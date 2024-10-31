@@ -1,4 +1,4 @@
-[![CI](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk10/actions/workflows/cicd.yml/badge.svg)](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk10/actions/workflows/cicd.yml)
+[![CI](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk10/actions/workflows/ci.yml/badge.svg)](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk10/actions/workflows/ci.yml)
 ## Evan_Li_IDS706_Hwk10
 ### File Structure
 ```
@@ -12,7 +12,7 @@ Evan_Li_IDS706_Hwk10/
 ├── data/
 │   ├── mydatabase.db   -> database
 │   ├── gen.py          -> generate fake sample data
-│   ├── requirements.txt-> python code dependences
+│   ├── requirements.txt-> python dependencies
 │   ├── createTables.sql-> create tables
 │   └── load.sql        -> load sample data
 ├── src/                
@@ -23,10 +23,8 @@ Evan_Li_IDS706_Hwk10/
 ├── tests/             
 │   └── main_test.rs    -> rust test file
 ├── .gitignore
-├── Cargo.toml               # Rust 项目配置
+├── Cargo.toml          -> rust dependencies
 ├── Cargo.lock
-├── pyproject.toml           # Python 项目配置
-├── requirements.txt         # Python 依赖
 ├── Makefile
 ├── README.md
 └── LICENSE
@@ -39,6 +37,10 @@ This is a Rust-based SQLite database management project that demonstrates CRUD (
 2. Used sql language to create a database with 3 tables and load the fake data
 3. Encapsulated these basic CRUD database operations into functions using `rusqlite` library, allowing users to directly call API functions based on business logic without having to write SQL statements
 4. Sample test cases are provided in the main function
+
+## Links
+1. [Video Demo](https://youtu.be/N383KLntjs0)
+2. [Github Actions](https://github.com/bionicotaku/Evan_Li_IDS706_Hwk10/actions/workflows/ci.yml)
 
 ## Preparation
 1. First of all, install the python packages and update rust toolchain `make install`
